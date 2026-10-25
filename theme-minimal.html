@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Devjack-12345 | Minimal Home</title>
+    <style>
+      :root {
+        --bg: #f4f1ec;
+        --panel: #fffdfb;
+        --panel-soft: #f7f3ee;
+        --text: #1f1d1b;
+        --muted: #5f5b56;
+        --primary: #9d7f64;
+        --primary-soft: #e1d3c4;
+        --line: rgba(31,29,27,0.12);
+        --shadow: 0 20px 40px rgba(35, 27, 18, 0.08);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: linear-gradient(180deg, var(--bg), #efebe6);
+        color: var(--text);
+        line-height: 1.7;
+      }
+      a { color: inherit; text-decoration: none; }
+      .container { width: min(1100px, calc(100% - 32px)); margin: 0 auto; }
+      .topbar {
+        border-bottom: 1px solid var(--line);
+        background: rgba(255,255,255,0.5);
+        backdrop-filter: blur(12px);
+      }
+      .nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; }
+      .brand { font-weight: 800; letter-spacing: 0.1em; }
+      .brand span { color: var(--primary); }
+      .links { display: flex; gap: 22px; color: var(--muted); }
+      .hero {
+        padding: 86px 0 42px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center;
+      }
+      .eyebrow {
+        margin: 0 0 12px; color: var(--primary); letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.72rem; font-weight: 700;
+      }
+      h1 {
+        margin: 0; font-size: clamp(2.5rem, 5vw, 4.3rem); letter-spacing: -0.06em; line-height: 1.1;
+      }
+      .subtitle { margin-top: 18px; color: var(--muted); max-width: 620px; }
+      .cta { margin-top: 26px; display: flex; gap: 16px; flex-wrap: wrap; }
+      .btn {
+        display: inline-flex; align-items: center; justify-content: center; min-width: 150px; padding: 0.9rem 1.3rem; border-radius: 999px;
+        border: 1px solid var(--line); font-weight: 700;
+      }
+      .btn-primary { background: var(--text); color: var(--panel); }
+      .btn-secondary { background: rgba(255,255,255,0.5); }
+      .card {
+        background: var(--panel); border: 1px solid var(--line); border-radius: 24px; box-shadow: var(--shadow);
+        padding: 24px;
+      }
+      .avatar {
+        width: 86px; height: 86px; display: grid; place-items: center; border-radius: 18px; background: linear-gradient(135deg, var(--primary), #d8c3ad);
+        color: #fffaf8; font-size: 2rem; font-weight: 800;
+      }
+      .card h2 { margin: 18px 0 6px; font-size: 1.9rem; }
+      .role { margin: 0; color: var(--muted); }
+      .status { margin-top: 18px; display: inline-flex; align-items: center; gap: 10px; font-size: 0.95rem; color: var(--muted); }
+      .dot { width: 10px; height: 10px; border-radius: 50%; background: #42b883; }
+      .info-grid { margin-top: 22px; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+      .info-box {
+        background: var(--panel-soft); border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px;
+      }
+      .info-box label { display: block; font-size: 0.72rem; color: var(--muted); margin-bottom: 6px; }
+      .info-box p { margin: 0; font-weight: 700; }
+      section { padding: 34px 0; }
+      .section-title h3 { margin: 0; font-size: 2rem; }
+      .grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 22px; }
+      .item {
+        background: rgba(255,255,255,0.5); border: 1px solid var(--line); border-radius: 22px; padding: 22px;
+      }
+      .tag { display: inline-block; padding: 0.45rem 0.7rem; border-radius: 999px; background: var(--primary-soft); border: 1px solid rgba(157,127,100,0.18); color: var(--primary); font-size: 0.72rem; font-weight: 700; }
+      .item h4 { margin: 18px 0 10px; font-size: 1.4rem; }
+      .item p { margin: 0 0 16px; color: var(--muted); }
+      .item a { color: var(--primary); font-weight: 700; }
+      footer { padding: 30px 0 56px; border-top: 1px solid var(--line); }
+      .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 18px; }
+      .footer-inner p { margin: 0; color: var(--muted); }
+      @media (max-width: 860px) {
+        .hero { grid-template-columns: 1fr; }
+        .grid { grid-template-columns: 1fr; }
+        .nav { flex-direction: column; justify-content: center; padding: 14px 0; }
+        .links { flex-wrap: wrap; justify-content: center; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand">DEV<span>JACK</span></div>
+        <nav class="links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="index.html">Style</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container hero">
+      <div>
+        <p class="eyebrow">minimal life</p>
+        <h1>简单，清晰，真实。</h1>
+        <p class="subtitle">
+          我在学习和成长的过程中，逐渐理解到：真正重要的不是炫耀，而是清楚地记录自己所学、所想和所做。
+        </p>
+        <div class="cta">
+          <a class="btn btn-primary" href="https://github.com/Devjack-12345" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn btn-secondary" href="https://github.com/Devjack-12345/My-first-Repository" target="_blank" rel="noreferrer">Repository</a>
+        </div>
+      </div>
+
+      <aside class="card">
+        <div class="avatar">D</div>
+        <h2>Devjack-12345</h2>
+        <p class="role">Minimal Creator</p>
+        <div class="status"><span class="dot"></span> Learning with calm</div>
+        <div class="info-grid">
+          <div class="info-box"><label>Focus</label><p>Web</p></div>
+          <div class="info-box"><label>Style</label><p>Minimal</p></div>
+        </div>
+      </aside>
+    </main>
+
+    <section id="about" class="container">
+      <div class="section-title">
+        <p class="eyebrow">About</p>
+        <h3>关于我</h3>
+      </div>
+      <div class="card">
+        <p>这是我第一次建立自己的项目主页，也是一段新的开始。通过记录和展示，我希望把学习、创造和思考都落到具体的作品里。</p>
+      </div>
+    </section>
+
+    <section id="skills" class="container">
+      <div class="section-title">
+        <p class="eyebrow">Skills</p>
+        <h3>技能</h3>
+      </div>
+      <div class="grid">
+        <div class="item"><span class="tag">Build</span><h4>HTML</h4><p>清楚地组织信息与内容结构。</p></div>
+        <div class="item"><span class="tag">Visual</span><h4>CSS</h4><p>控制页面的节奏和整体氛围。</p></div>
+        <div class="item"><span class="tag">Workflow</span><h4>GitHub</h4><p>管理项目、提交与发布代码。</p></div>
+      </div>
+    </section>
+
+    <section id="projects" class="container">
+      <div class="section-title">
+        <p class="eyebrow">Projects</p>
+        <h3>项目</h3>
+      </div>
+      <div class="grid">
+        <article class="item"><span class="tag">Featured</span><h4>My-first-Repository</h4><p>我的第一个 GitHub 仓库，见证成长的开端。</p><a href="https://github.com/Devjack-12345/My-first-Repository" target="_blank" rel="noreferrer">查看</a></article>
+        <article class="item"><span class="tag">Brand</span><h4>Personal Homepage</h4><p>一个用来展示自己的作品与学习轨迹的主页。</p><a href="index.html">切换风格</a></article>
+        <article class="item"><span class="tag">Future</span><h4>更多作品</h4><p>后续将持续更新项目和学习经验。</p><a href="https://github.com/Devjack-12345" target="_blank" rel="noreferrer">GitHub</a></article>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container footer-inner">
+        <div>
+          <h3>Devjack-12345</h3>
+          <p>Minimal Personal Homepage</p>
+        </div>
+        <div><a href="index.html">返回选择页</a></div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
